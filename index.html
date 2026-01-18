@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Ramya K</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#f5f7fa;
+  color:#333;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:linear-gradient(135deg,#4381d7,#009ffd);
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
+
+nav h2{
+  color:#fff;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+nav ul li a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav ul li a:hover{
+  text-decoration:underline;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:linear-gradient(135deg,#1d5d7b,#133d7d);
+  color:#fff;
+  padding:130px 20px 90px;
+  text-align:center;
+}
+
+header h1{
+  font-size:40px;
+}
+
+header p{
+  margin:10px 0;
+  font-size:18px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 26px;
+  background:#fff;
+  color:#009ffd;
+  border-radius:30px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+/* ===== ABOUT FULL WIDTH ===== */
+.about-section{
+  width:100%;
+  background:#eaf6ff;
+  padding:80px 20px;
+}
+
+.about-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:50px;
+  align-items:center;
+}
+
+.about-container img{
+  width:260px;
+  border-radius:50%;
+  margin:auto;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.about-text{
+  background:#fff;
+  padding:35px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.about-text h2{
+  color:#009ffd;
+  margin-bottom:15px;
+}
+
+.about-text p{
+  font-size:16px;
+  line-height:1.7;
+}
+
+/* ===== COMMON SECTION ===== */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+section h2{
+  text-align:center;
+  margin-bottom:40px;
+  color:#009ffd;
+}
+
+/* ===== EDUCATION ===== */
+.education-container{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.edu-card{
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+.edu-card h3{
+  color:#009ffd;
+}
+/* SKILLS */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.skill-box{
+  background:#ffffff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.skill-box h3{
+  color:#4f8fcf;
+  margin-bottom:15px;
+}
+
+.skill-box ul{
+  padding-left:18px;
+}
+
+.skill-box li{
+  margin-bottom:8px;
+}
+
+/* CONTACT */
+.contact{
+  background:#ffffff;
+  padding:50px 30px;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.contact-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.contact-item{
+  margin-bottom:12px;
+}
+
+.social-icons a{
+  display:inline-block;
+  margin-right:10px;
+  background:#eef2f7;
+  padding:10px;
+  border-radius:50%;
+  text-decoration:none;
+  color:#4f8fcf;
+  font-weight:bold;
+}
+
+.send-btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 22px;
+  background:#4f8fcf;
+  color:#fff;
+  border-radius:6px;
+  text-decoration:none;
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.project{
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 0 8px rgba(0,0,0,0.1);
+}
+
+.project h3{ color:#009ffd; }
+
+/* ===== DOWNLOAD RESUME ===== */
+.resume-section{
+  width:100%;
+  background:#56aad4;
+  color:#fff;
+  padding:70px 20px;
+  text-align:center;
+}
+
+.resume-section h2{
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.resume-section p{
+  color:#ccc;
+  margin-bottom:25px;
+}
+
+.resume-btn{
+  display:inline-block;
+  padding:12px 28px;
+  border:2px solid #287aa9;
+  color:#1d5e84;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.resume-btn:hover{
+  background:#196089;
+  color:#fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  nav ul{
+    display:none;
+  }
+
+  .about-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>Ramya K</h2>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certificates">certificates</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<header>
+  <h1>Welcome to My Portfolio</h1>
+  <p>I'm <b>Ramya K</b></p>
+  <p>Front-End Developer</p>
+</header>
+
+<!-- ABOUT -->
+<div class="about-section" id="about">
+  <div class="about-container">
+    <img src="photos.jpeg" alt="Ramya K">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+         Goal-oriented Computer Science Engineering student aiming to launch a career in IT.
+         Proficient in software Development and Front-End Developer, 
+         with an interest in building reliable and scalable software solutions.
+         Strong analytical thinker and problem solver eager to tackle real-world challenges.</p>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="education-container">
+    <div class="edu-card">
+      <h3>BE – Computer Science Engineering</h3>
+      <p>Government College of Engineering, Dharmapuri</p>
+      <b>Nov 2022 – Jun 2026</b>
+    </div>
+    <div class="edu-card">
+      <h3>HSC</h3>
+      <p>Government Matric Higher Secondary School, Krishnapuram</p>
+      <b>Jun 2021 –Apr 2022</b>
+    </div>
+    <div class="edu-card">
+      <h3>SSLC</h3>
+      <p>Government Matric Higher Secondary School, Krishnapuram</p>
+      <b>Jun 2020 – Mar 2021</b>
+    </div>
+  </div>
+</section>
+
+<!--skill-->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-box">
+      <h3>Technical Skills</h3>
+      <ul>
+        <li>HTML</li><li>CSS</li><li>JavaScript</li>
+        <li>Python</li><li>Java</li><li>C</li>
+      </ul>
+    </div>
+    <div class="skill-box">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Effective Communication</li><li>Team Collaboration</li><li>Strong Problem Solving</li><li>Time management</li><li>Leadership Adaptability</li>
+      </ul>
+    </div>
+    <div class="skill-box">
+      <h3>Tools</h3>
+      <ul>
+        <li>GitHub</li><li>VS Code</li>
+      </ul>
+    </div>
+    <div class="skill-box">
+      <h3>Design</h3>
+      <ul>
+        <li>Figma</li><li>Canva</li><li>UI/UX</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section>
+
+  <!--project-->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>Wheels on Meals- E- Commerce Website</h3>
+      <p>Created a responsive online food delivery platform with HTML,CSS,Javascript and Boostrap.Implemented cart,checkout and order placement features.Integrated a python back-end with MySQL for order and user management. </p>
+    </div>
+  
+    <div class="project">
+      <h3>Flipkart Review Analyzer</h3>
+      <p>Developed a Python-based Flipkart Product Review Scraper using Selenium to automate extraction of product
+titles, prices, ratings, and customer reviews from dynamic web page..</p>
+    </div>
+  </div>
+</section>
+<!--certificate-->
+<section id="certificates">
+  <h2>Certificates</h2>
+  <div class="skills-grid">
+    <div class="skill-box">
+      <h3>Fundamentals of Deep Learning-NVIDIA</h3>
+      <h7>completed September 2025</h5>
+      <p>Learned Principles and fundamentals of Deep Learning.</p>
+    </div>
+    <div class="skill-box">
+      <h3>Cyber Shield 360:Mastering Network Security and Cybersecurity- kriyavan Cyber Forensic Service </h3>
+      <p>Attendant Two days workshop in the Mastering Network Security and Cybersecurity- kriyavan Cyber Forensic Service. </p>
+    </div>
+    <div class="skill-box">
+      <h3>Google Data Analytics </h3>
+      <p>Learned Data analytics.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+
+  <div class="contact">
+    <div class="contact-item">Email: ramyakramya935@gmail.com</div>
+    <div class="contact-item">Phone: +91 9043405979</div>
+    <div class="contact-item">Location: Dharmapuri, Tamil Nadu</div>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/ramya-k-852251335/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/ramyak-2005" target="_blank">GitHub</a>
+    </div>
+
+    <a href="contact.html" class="send-btn">Send Message</a>
+  </div>
+</section>
+
+
+<!-- DOWNLOAD RESUME -->
+<div class="resume-section" id="resume">
+  <h2>Download My Resume</h2>
+  <p>Get a copy of my detailed resume for your reference</p>
+  <a href="Ramya_k_Resume.pdf" class="resume-btn" download>⬇ Download Resume</a>
+</div>
+<!--footer-->
+<!-- FOOTER -->
+<footer style="
+  background: linear-gradient(135deg,#2b5378,#1f6b98);
+  color:#ffffff;
+  text-align:center;
+  padding:15px 40px;
+  width: 100%;
+">
+  <p style="margin:6px 0; font-size:16px; font-weight:bold;">
+
+  </p>
+
+  <p style="margin:6px 0; font-size:16px;">
+    <a href="mailto:ramyakramya935@gmail.com"
+       style="color:#ffffff; text-decoration:none; font-weight:bold;">
+      ramyakramya935@gmail.com
+    </a>
+  </p>
+
+  <p style="margin:6px 0; font-size:14px;">
+     Ramya k©2026 
+  </p>
+</footer>
+
+
+</body>
+</html>
